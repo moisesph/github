@@ -128,6 +128,9 @@ def password_strength(word):
 
     elif password  >= 2 and password < 6 and case_sensitive != True:
         print(f"{word} / {password} /")
+        if case_sensitive != True:
+            main()
+
 
     elif len(word) <= min_length and case_sensitive != True: 
         print(f"{word} / {password} / Password is too short and is not secure.")
