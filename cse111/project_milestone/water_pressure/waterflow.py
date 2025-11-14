@@ -1,13 +1,15 @@
+#I added as variables  EARTH_ACCELERATION_OF_GRAVITY, 9.8066500WATER_DENSITY, WATER_DYNAMIC_VISCOSITY	instead of using the numbers in the functions. at lines 9-11 and I used them in the variables
+
 PVC_SCHED80_INNER_DIAMETER = 0.28687 # (meters)  11.294 inches
 PVC_SCHED80_FRICTION_FACTOR = 0.013  # (unitless)
 SUPPLY_VELOCITY = 1.65               # (meters / second)
 HDPE_SDR11_INNER_DIAMETER = 0.048692 # (meters)  1.917 inches
 HDPE_SDR11_FRICTION_FACTOR = 0.018   # (unitless)
 HOUSEHOLD_VELOCITY = 1.75            # (meters / second)
-WATER_DENSITY=998.2                  # density of water (998.2 kilogram / meter^3)
-GRAVITY = 9.80665
-VISCOSITY = 0.0010016
-
+WATER_DENSITY=998.2000000            # density of water (998.2 kilogram / meter^3)
+EARTH_ACCELERATION_OF_GRAVITY = 9.80665 #Gravity of earth
+WATER_DYNAMIC_VISCOSITY = 0.0010016  # Viscosity of water
+ 
 def main():
     tower_height = float(input("Height of water tower (meters): "))
     tank_height = float(input("Height of water tank walls (meters): "))
@@ -39,7 +41,7 @@ def water_column_height(tower_height, tank_height):
     return tower_height + 3 * tank_height / 4
 
 def pressure_gain_from_water_height(water_height):
-    return WATER_DENSITY * water_height  * GRAVITY / 1000
+    return WATER_DENSITY * water_height  * EARTH_ACCELERATION_OF_GRAVITY / 1000
     
 def pressure_loss_from_pipe(pipe_diameter, pipe_length, friction_factor, fluid_velocity):
     numerator = -friction_factor * pipe_length * (WATER_DENSITY * fluid_velocity ** 2)
@@ -51,7 +53,7 @@ def pressure_loss_from_fittings(fluid_velocity, quantity_fittings):
 
 def reynolds_number(hydraulic_diameter, fluid_velocity):
        numerator = WATER_DENSITY * hydraulic_diameter * fluid_velocity 
-       denominator = VISCOSITY
+       denominator = WATER_DYNAMIC_VISCOSITY
        return numerator / denominator
 
 def pressure_loss_from_pipe_reduction(larger_diameter, fluid_velocity, reynolds_number, smaller_diameter):
