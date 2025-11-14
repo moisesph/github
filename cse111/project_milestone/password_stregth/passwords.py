@@ -40,7 +40,7 @@ def word_in_file(word, filename, case_sensitive=False):
     """
      Compare if the name is on file
     """
-    with open(filename, "r",encoding="utf-8") as file:
+    with  open(filename, "r",encoding="utf-8") as file:
         for line in file:
             line2 = line.strip()
 
@@ -118,6 +118,8 @@ def password_strength(password,min_length=10,strong_length=16):
 
         elif case_sensitive != True:
             strength = 1 + word_complexity(password)
+            if  len(password) < min_length:
+                strength -=  1 #If the password is short this takes off 1
 
             if strength != 0:
                 if len(password) < min_length:
