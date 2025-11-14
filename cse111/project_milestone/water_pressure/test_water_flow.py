@@ -25,7 +25,7 @@ def  test_pressure_loss_from_fittings(): #Passed
 def  test_reynolds_number(): #Passed 
     assert reynolds_number(0.286870, 1.65) == approx(471729, abs=1)
 
-def  test_pressure_loss_from_pipe_reduction():  #Issue in fluid velocity and reynolds
+def  test_pressure_loss_from_pipe_reduction(): #Passed
     assert pressure_loss_from_pipe_reduction(0.28687, 1.75, 500318, 0.048692) == approx(-184.182, abs=0.001)
 
 pytest.main(["-v", "--tb=line", "-rN", __file__])
