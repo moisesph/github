@@ -15,23 +15,25 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
    # periodic_table_dict = make_periodic_table()
   #  total = sum(value[1] for value in periodic_table_dict.values())
     total = 0
-    for _ in symbol_quantity_list:
+    for symbol, quantity in symbol_quantity_list:
+        symb 
+        quantity
         #Here I need to find for example what "C" is the weight an maybe multiply 
         #ymbol = periodic_table_dict[0]
         #times = periodic_table_dict[1] 
        # symbol = symbol_quantity_list[0]
         #times = symbol_quantity_list[1]
         name, number = periodic_table_dict[symbol]
-        for _ in symbol_quantity_list:
-            for i in _:
-                print(i)
-                if i in periodic_table_dict:
+        #for _ in symbol_quantity_list:
+           # for i in _:
+          #      print(i)
+              #  if i in periodic_table_dict:
                     #total_mass = times * mass_list
                     #if symbol == symbol_list:
                 
 
                 #HERE, I just need to sepate this things unto part, and  after that make the calculation and that's all
-                        total_mass + total
+                #        total_mass + total
 
         print(symbol_quantity_list)
         print( total)
