@@ -1,5 +1,5 @@
 #exceed requirements: On the line 21 I ask you if you would like to look at the periodic table, if you press "Y" and enter
-#It opens it in the browser, I made this with an import in line 6 and if statement in line 23 and 25 OwO.
+#It opens it in the browser, I made this with an import in line 6 and if statement in line 22 and 23 OwO.
 
 
 from formula import parse_formula
@@ -8,7 +8,7 @@ import webbrowser
 def main():
     periodic_table_website = "https://ptable.com/#Properties"
 
-    symbol_quantity_list = input("Enter the molecular formula of the sample: C6H6 ").upper()
+    symbol_quantity_list = input("Enter the molecular formula of the sample: C6H6 ")
     sample_mass = float(input("Enter the mass in grams of the sample: 25.04 ")) 
     dictionary = make_periodic_table() 
 
@@ -18,7 +18,6 @@ def main():
     
     print(f"{molar_mass:.5f} grams/mole")
     print(f"{moles:.5f} moles")
-    print("Here's the Periodic table if you need it: ")
     table_website_answer = input("Would you check an eye on the periodic table? Y or N ").upper()
     if table_website_answer == "Y":
         webbrowser.open(periodic_table_website)
