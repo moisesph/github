@@ -1,6 +1,8 @@
 # Copyright 2020, Brigham Young University-Idaho. All rights reserved.
 
 from chemistry import make_periodic_table
+from chemistry import compute_molar_mass
+from chemistry import make_periodic_table
 from pytest import approx
 import pytest
 

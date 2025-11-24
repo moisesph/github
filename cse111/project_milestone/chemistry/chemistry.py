@@ -1,46 +1,58 @@
+#exceed requirements: On the line 21 I ask you if you would like to look at the periodic table, if you press "Y" and enter
+#It opens it in the browser, I made this with an import in line 6 and if statement in line 23 and 25 OwO.
+
+
 from formula import parse_formula
+import webbrowser
 
 def main():
-    formula = input("Enter the molecular formula of the sample: C6H6 ").upper()
-    sample_mass = float(input("Enter the mass in grams of the sample: 25.04 ")) #How I introduce this variable?
+    periodic_table_website = "https://ptable.com/#Properties"
+
+    symbol_quantity_list = input("Enter the molecular formula of the sample: C6H6 ").upper()
+    sample_mass = float(input("Enter the mass in grams of the sample: 25.04 ")) 
     dictionary = make_periodic_table() 
 
-    symbol_quantity_list = parse_formula(formula, dictionary)
+    symbol_quantity_list = parse_formula(symbol_quantity_list, dictionary)
+    molar_mass = compute_molar_mass(symbol_quantity_list, dictionary) 
+    moles = sample_mass / molar_mass
     
-    compute_molar_mass(symbol_quantity_list, dictionary) #I am 5 step
-
+    print(f"{molar_mass:.5f} grams/mole")
+    print(f"{moles:.5f} moles")
+    print("Here's the Periodic table if you need it: ")
+    table_website_answer = input("Would you check an eye on the periodic table? Y or N ").upper()
+    if table_website_answer == "Y":
+        webbrowser.open(periodic_table_website)
+    
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     """ Compute and return the total molar mass of all the elements listed in symbol_quantity_list."""
-   # periodic_table_dict = make_periodic_table()
-  #  total = sum(value[1] for value in periodic_table_dict.values())
-    total = 0
+
+    total_mass = 0
+
+
+    NAME_INDEX = 0
+    ATOMIC_MASS_INDEX = 1 
+
     for symbol, quantity in symbol_quantity_list:
-        symb 
-        quantity
-        #Here I need to find for example what "C" is the weight an maybe multiply 
-        #ymbol = periodic_table_dict[0]
-        #times = periodic_table_dict[1] 
-       # symbol = symbol_quantity_list[0]
-        #times = symbol_quantity_list[1]
-        name, number = periodic_table_dict[symbol]
-        #for _ in symbol_quantity_list:
-           # for i in _:
-          #      print(i)
-              #  if i in periodic_table_dict:
-                    #total_mass = times * mass_list
-                    #if symbol == symbol_list:
-                
 
-                #HERE, I just need to sepate this things unto part, and  after that make the calculation and that's all
-                #        total_mass + total
+        if symbol in periodic_table_dict:
 
-        print(symbol_quantity_list)
-        print( total)
-    return total
+            value_list = periodic_table_dict[symbol]
+
+            # name = value_list[NAME_INDEX] We didn't need this but is useful
+            atomic_mass = value_list[ATOMIC_MASS_INDEX]
+
+            mass = quantity * atomic_mass
+            total_mass += mass
+
+        else: print("Not valid")
+
+
+    return total_mass 
+        
+
 
 def make_periodic_table():
-    #Returns: Dictionary
     dictionary = {
      "Ac": ["Actinium", 227],
      "Ag": ["Silver", 107.8682],
@@ -137,6 +149,8 @@ def make_periodic_table():
      "Zn": ["Zinc", 65.38],
      "Zr": ["Zirconium", 91.224],
     }
+
+
     return dictionary
 
 
