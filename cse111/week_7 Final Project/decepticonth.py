@@ -11,7 +11,6 @@ import os
 import string
 
 
-
  
 def main():
     root = tk.Tk()
@@ -46,7 +45,11 @@ def set_main(window):
 
     btn_start = tk.Button(window, text="Find!")
     btn_start.grid(row=4, column=0)
-    btn_lbl_start = tk.Label(window, text="")
+
+
+    output_message = tk.StringVar()
+
+    btn_lbl_start = tk.Label(window, textvariable=output_message)
     btn_lbl_start.grid(row=5,column=0)
 
     
@@ -64,16 +67,21 @@ def set_main(window):
     def message_btn():
         
         word = entry_name.get()
-        # Ahora UnboundLocalError:
+        
         try:
             doc = body_document
         except NameError:
-            error = tk.Label(window, text="Please Enter a Name or Word")
-            error.grid(row=5, column=0)    
-        lbl_comparison_final = comparing(word, doc)
-        btn_lbl_start.config(text=lbl_comparison_final)
+            output_message.set("Please Enter a word")    
+        try:
+            lbl_comparison_final = comparing(word, doc)#
+            output_message.set(lbl_comparison_final)
+        except UnboundLocalError:
+            output_message.set("Please Enter a file")    
         
-
+        if word == "" or word == " ":
+            output_message.set("Please Enter a word")  
+        
+#UnboundLocalError:
    
     btn_start.config(command=message_btn)
 
@@ -96,21 +104,27 @@ def open_file():
 
     #Heres a bug where if you don't select anything says it was opened successfully
 
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
 
-    with open(filename, "r", encoding="utf-8") as f:
+            old_body_document = [line.strip().split() for line in f] #This to open the file properly
 
-        old_body_document = [line.strip().split() for line in f] #This to open the file properly
+            all_old_body_document = [word for sublist in old_body_document for word in sublist] #This to put it in a string to make it easy to process
 
-        all_old_body_document = [word for sublist in old_body_document for word in sublist] #This to put it in a string to make it easy to process
+            string_body_document = " ".join(all_old_body_document) # This to put it in one list
 
-        string_body_document = " ".join(all_old_body_document) # This to put it in one list
+            body_document = string_body_document.split()
 
-        body_document = string_body_document.split()
+            showinfo(
+            title="Selected File",
+            message = f"The file {file_name_only} was selected successfully" 
+            )
+    except FileNotFoundError:
+            showinfo(
+            title="Error",
+            message = "Please select a File!" 
+            )
 
-        showinfo(
-        title="Selected File",
-        message = f"The file {file_name_only} was selected successfully" 
-        )
 
 
 #Requirements
