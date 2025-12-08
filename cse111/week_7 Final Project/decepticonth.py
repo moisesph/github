@@ -27,7 +27,13 @@ def main():
 
 
 def set_main(window):
+
+
+    
     lbl_name = tk.Label(window, text="What is the word which are you looking for?")
+    
+        
+   
     lbl_name.grid(row=0, column=0)
     entry_name = tk.Entry(window, background="sky blue")
     entry_name.grid(row=1, column=0)
@@ -48,7 +54,6 @@ def set_main(window):
     def comparing(name, document):
         total = 0
         for word in document:
-            #if times == name:
             if name in word:
                 total+= 1
         text_comparison = f"Times that the word are repeated are {total}"
@@ -57,8 +62,14 @@ def set_main(window):
 
 
     def message_btn():
+        
         word = entry_name.get()
-        doc = body_document
+        # Ahora UnboundLocalError:
+        try:
+            doc = body_document
+        except NameError:
+            error = tk.Label(window, text="Please Enter a Name or Word")
+            error.grid(row=5, column=0)    
         lbl_comparison_final = comparing(word, doc)
         btn_lbl_start.config(text=lbl_comparison_final)
         
@@ -82,10 +93,7 @@ def open_file():
 
     file_name_only = os.path.basename(filename)
 
-    showinfo(
-        title="Selected File",
-        message = f"The file {file_name_only} was selected successfully" 
-        )
+
     #Heres a bug where if you don't select anything says it was opened successfully
 
 
@@ -99,8 +107,25 @@ def open_file():
 
         body_document = string_body_document.split()
 
+        showinfo(
+        title="Selected File",
+        message = f"The file {file_name_only} was selected successfully" 
+        )
 
 
+#Requirements
+#1. The report be nice
+#2. Report with total of 12 hours
+#3. Runs ok and with no incorrect results
+#4. 4 functions (I have 3)
+#5. Program use 1 module                       YES
+#6. Two Test Functions
+#7. All test function pass
+#8. Two asserts and 2 call in each test function
+
+
+
+#Look how to attach the key enter to the button action
 
 if __name__ in "__main__":
     main()
