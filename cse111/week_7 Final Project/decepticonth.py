@@ -10,7 +10,7 @@ from tkinter.messagebox import showinfo
 import os
 import string
 
-
+# I need to put everything in lower case 
  
 def main():
     root = tk.Tk()
@@ -81,7 +81,7 @@ def set_main(window):
         if word == "" or word == " ":
             output_message.set("Please Enter a word")  
         
-#UnboundLocalError:
+
    
     btn_start.config(command=message_btn)
 

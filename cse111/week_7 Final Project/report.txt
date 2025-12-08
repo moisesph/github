@@ -24,5 +24,7 @@ Decepticonth Project Report
 2025-12-07	0:06 	Verifying everything is OK.
 2025-12-07	0:23 	Fixing the report and reviewing the requirements of the program
 2025-12-07	0:02  Investigating About to link the key enter to run the program	
+2025-12-08	0:46  Adding try and except to cover any possible bugs and fixing the output message because before it was overwriting each other making a visual bugs
+2025-12-08	0:03  writing the report
 ========================================
 
