@@ -9,7 +9,7 @@ from tkinter.messagebox import showinfo
 
 import os
 import string
-import ast
+
 
 
  
@@ -61,7 +61,7 @@ def set_main(window):
         doc = body_document
         lbl_comparison_final = comparing(word, doc)
         btn_lbl_start.config(text=lbl_comparison_final)
-        print(doc)
+        
 
    
     btn_start.config(command=message_btn)
