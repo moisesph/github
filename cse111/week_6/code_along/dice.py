@@ -11,7 +11,7 @@ def main():
     frm_window.pack(padx=3, pady=3, fill=tk.BOTH,expand=True)
     set_main(frm_window)
     frm_window.mainloop()
-
+ 
  
 def set_main(content):
     lbl_sides = tk.Label(content, text="The number of sides on the dice (2-10)")

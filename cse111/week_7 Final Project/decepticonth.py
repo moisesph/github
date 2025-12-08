@@ -8,8 +8,11 @@ from tkinter import Frame, Label, Button, filedialog as fd, ttk
 from tkinter.messagebox import showinfo
 
 import os
+import string
+import ast
 
 
+ 
 def main():
     root = tk.Tk()
     root.resizable(False, False)
@@ -19,7 +22,7 @@ def main():
     frm_window.pack(padx=3, pady=3, fill=tk.BOTH, expand=True) 
     set_main(frm_window)
     frm_window.mainloop()
-
+    body_document = ""
 #Sencitive to case letters
 
 
@@ -28,7 +31,6 @@ def set_main(window):
     lbl_name.grid(row=0, column=0)
     entry_name = tk.Entry(window, background="sky blue")
     entry_name.grid(row=1, column=0)
-
 
 
     lbl_doc = tk.Label(window, text="And the document?")
@@ -41,20 +43,37 @@ def set_main(window):
     btn_lbl_start = tk.Label(window, text="")
     btn_lbl_start.grid(row=5,column=0)
 
-    word= lbl_name
-    doc = button_doc
-    compare = comparing(word, doc)
-
-
     
+
+    def comparing(name, document):
+        total = 0
+        for word in document:
+            #if times == name:
+            if name in word:
+                total+= 1
+        text_comparison = f"Times that the word are repeated are {total}"
+        return text_comparison
+
+
+
+    def message_btn():
+        word = entry_name.get()
+        doc = body_document
+        lbl_comparison_final = comparing(word, doc)
+        btn_lbl_start.config(text=lbl_comparison_final)
+        print(doc)
+
+   
+    btn_start.config(command=message_btn)
 
 
 def open_file():
+    global body_document
     filetypes = (
         ("text files", "*.txt"),
         ("word Files", ("*.doc", "*.docx")), #It is not recognicing this kind of documents
         ("All files", "*.*")
-    )
+        )
 
     filename = fd.askopenfilename(
         title="open a file",
@@ -65,31 +84,21 @@ def open_file():
 
     showinfo(
         title="Selected File",
-        message = f"The file {file_name_only} was selected successfully" #I am trying to show this at the screen
-    )
-
+        message = f"The file {file_name_only} was selected successfully" 
+        )
     #Heres a bug where if you don't select anything says it was opened successfully
-    
 
 
-def comparing(name, document):
-    compare = ""
-    compare = f"The name appears: {compare}"
-    print(compare)
-    return compare
-  #  if name in document:
-  #      print("XDDD")
-    pass
+    with open(filename, "r", encoding="utf-8") as f:
 
+        old_body_document = [line.strip().split() for line in f] #This to open the file properly
 
-#Let him know how many times appears
+        all_old_body_document = [word for sublist in old_body_document for word in sublist] #This to put it in a string to make it easy to process
 
+        string_body_document = " ".join(all_old_body_document) # This to put it in one list
 
+        body_document = string_body_document.split()
 
-
-#Ask if he wants to change every word for one
-
-#Replace if yes
 
 
 
