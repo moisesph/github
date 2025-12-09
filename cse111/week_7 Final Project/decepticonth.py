@@ -30,36 +30,37 @@ def main():
 def set_main(window):
     """It has the content of the program"""
 
-    advertisement_lbl = tk.Label(window, text="*Uppercase matters in some languages; be precise.*")
-    advertisement_lbl.grid(row=0, column=0)
-    
     lbl_name = tk.Label(window, text="What is the word or number to search?")
-    lbl_name.grid(row=1, column=0)
+    lbl_name.grid(row=0, column=0)
 
     entry_name = tk.Entry(window, background="sky blue")
-    entry_name.grid(row=2, column=0)
+    entry_name.grid(row=1, column=0)
 
 
     lbl_doc = tk.Label(window, text="And the document? (Remember)")
-    lbl_doc.grid(row=3, column=0)
+    lbl_doc.grid(row=2, column=0)
     button_doc = ttk.Button(window, text="Open a File", command=open_file)
-    button_doc.grid(row=4, column=0)
+    button_doc.grid(row=3, column=0)
 
     btn_start = tk.Button(window, text="Find!")
-    btn_start.grid(row=5, column=0)
+    btn_start.grid(row=4, column=0)
 
 
     output_message = tk.StringVar()
 
     btn_lbl_start = tk.Label(window, textvariable=output_message)
-    btn_lbl_start.grid(row=6,column=0)
+    btn_lbl_start.grid(row=5,column=0)
 
     btn_spam_website = tk.Button(window, text="Here's about me!")
-    btn_spam_website.grid(row=7, column=0)
+    btn_spam_website.grid(row=6, column=0)
+
+
 
     def comparing(name, document):
         """Counts the times that the word is in the document"""
         total = 0
+
+        
 
         for word in document:
             if name in word:
@@ -71,7 +72,9 @@ def set_main(window):
 
     def message_btn():
         """Shows different messages at the end of the button"""
+        global word
         word = entry_name.get()
+        word = word.lower()
 
         if " " in word:
             output_message.set("Do not enter spaces") 
@@ -86,14 +89,11 @@ def set_main(window):
         except NameError:
             output_message.set("Please Enter a word")    
         try:
+            make_lower_case(doc)
             lbl_comparison_final = comparing(word, doc)
             output_message.set(lbl_comparison_final)
         except UnboundLocalError:
             output_message.set("Please Enter a file")    
-        
-
-             
-         
         
 
    
@@ -105,7 +105,6 @@ def open_url():
     """Open my biography making Spam"""
     url = "https://moisesph.github.io/wdd130"
     webbrowser.open_new_tab(url)
-
 
 
 def open_file():
@@ -149,6 +148,14 @@ def open_file():
             )
 
 
+def make_lower_case(document):
+    """Makes the List lower"""
+
+    for i, words in enumerate(document):
+        document[i] = words.lower()
+
+
+    return words
 
 
 #Requirements
