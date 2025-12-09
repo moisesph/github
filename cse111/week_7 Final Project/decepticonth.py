@@ -9,10 +9,12 @@ from tkinter.messagebox import showinfo
 
 import os
 import string
+import webbrowser
 
 # I need to put everything in lower case 
  
 def main():
+    """Creates the root window for the program"""
     root = tk.Tk()
     root.resizable(False, False)
 
@@ -26,36 +28,39 @@ def main():
 
 
 def set_main(window):
+    """It has the content of the program"""
 
+    advertisement_lbl = tk.Label(window, text="*Uppercase matters in some languages; be precise.*")
+    advertisement_lbl.grid(row=0, column=0)
+    
+    lbl_name = tk.Label(window, text="What is the word or number to search?")
+    lbl_name.grid(row=1, column=0)
 
-    
-    lbl_name = tk.Label(window, text="What is the word which are you looking for?")
-    
-        
-   
-    lbl_name.grid(row=0, column=0)
     entry_name = tk.Entry(window, background="sky blue")
-    entry_name.grid(row=1, column=0)
+    entry_name.grid(row=2, column=0)
 
 
-    lbl_doc = tk.Label(window, text="And the document?")
-    lbl_doc.grid(row=2, column=0)
+    lbl_doc = tk.Label(window, text="And the document? (Remember)")
+    lbl_doc.grid(row=3, column=0)
     button_doc = ttk.Button(window, text="Open a File", command=open_file)
-    button_doc.grid(row=3, column=0)
+    button_doc.grid(row=4, column=0)
 
     btn_start = tk.Button(window, text="Find!")
-    btn_start.grid(row=4, column=0)
+    btn_start.grid(row=5, column=0)
 
 
     output_message = tk.StringVar()
 
     btn_lbl_start = tk.Label(window, textvariable=output_message)
-    btn_lbl_start.grid(row=5,column=0)
+    btn_lbl_start.grid(row=6,column=0)
 
-    
+    btn_spam_website = tk.Button(window, text="Here's about me!")
+    btn_spam_website.grid(row=7, column=0)
 
     def comparing(name, document):
+        """Counts the times that the word is in the document"""
         total = 0
+
         for word in document:
             if name in word:
                 total+= 1
@@ -65,28 +70,46 @@ def set_main(window):
 
 
     def message_btn():
-        
+        """Shows different messages at the end of the button"""
         word = entry_name.get()
+
+        if " " in word:
+            output_message.set("Do not enter spaces") 
+            return
         
+        if word.strip() == "":
+            output_message.set("Please Enter a word") 
+            return
+
         try:
             doc = body_document
         except NameError:
             output_message.set("Please Enter a word")    
         try:
-            lbl_comparison_final = comparing(word, doc)#
+            lbl_comparison_final = comparing(word, doc)
             output_message.set(lbl_comparison_final)
         except UnboundLocalError:
             output_message.set("Please Enter a file")    
         
-        if word == "" or word == " ":
-            output_message.set("Please Enter a word")  
+
+             
+         
         
 
    
     btn_start.config(command=message_btn)
 
+    btn_spam_website.config(command=open_url)
+
+def open_url():
+    """Open my biography making Spam"""
+    url = "https://moisesph.github.io/wdd130"
+    webbrowser.open_new_tab(url)
+
+
 
 def open_file():
+    """Open the file cleaning it with any unwanted sign"""
     global body_document
     filetypes = (
         ("text files", "*.txt"),
@@ -127,15 +150,16 @@ def open_file():
 
 
 
+
 #Requirements
-#1. The report be nice
-#2. Report with total of 12 hours
-#3. Runs ok and with no incorrect results
-#4. 4 functions (I have 3)
+#1. The report be nice                          Yes
+#2. Report with total of 12 hours               NO
+#3. Runs ok and with no incorrect results       NO
+#4. 4 functions (I have 3)                      YES
 #5. Program use 1 module                       YES
-#6. Two Test Functions
-#7. All test function pass
-#8. Two asserts and 2 call in each test function
+#6. Two Test Functions                          NO
+#7. All test function pass                      NO
+#8. Two asserts and 2 call in each test function NO
 
 
 
