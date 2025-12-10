@@ -27,5 +27,13 @@ Decepticonth Project Report
 2025-12-08	0:46  Adding try and except to cover any possible bugs and fixing the output message because before it was overwriting each other making a visual bugs
 2025-12-08	0:03  writing the report
 2025-12-08	0:45  Adding a function to link my website, and debugging some functions like when you added spaces, it was not supported, also, I added a message at the top to be precise with the upper cases because in some cases like french the upper cases are important
+2025-12-08	0:45  Debugging where if you enter spaces or you don't enter anything, it compared anyways the document
+2025-12-10	1:00  Creating test functions, is still not completed but we are going forward
+2025-12-10	2:00  Investigating how to create the test function, I have created the program first, is being harder to create the test than the actual program.
+2025-12-10	0:15  Taking breaks and trying to making the function test_make lower case work
+2025-12-10	0:20  Finished the test function to make it lower
+2025-12-10	0:30  Trying make test_open_url work.
+2025-12-10	0:20  the test_open_url worked but every time someone used it it opens the url, so instead of trying to fix it I deleted, I proceeded to create a text function for the compare function which works great
+2025-12-10	0:03  Finishing the report.
 ========================================
 

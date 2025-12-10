@@ -1,5 +1,5 @@
 """
-Find how many times a word or name is in a list
+Find how many times a word or a letter is in a list
 by: Moises Pleytez
 """
 
@@ -10,8 +10,8 @@ from tkinter.messagebox import showinfo
 import os
 import string
 import webbrowser
+ 
 
-# I need to put everything in lower case 
  
 def main():
     """Creates the root window for the program"""
@@ -24,13 +24,12 @@ def main():
     set_main(frm_window)
     frm_window.mainloop()
     body_document = ""
-#Sencitive to case letters
 
 
 def set_main(window):
     """It has the content of the program"""
 
-    lbl_name = tk.Label(window, text="What is the word or number to search?")
+    lbl_name = tk.Label(window, text="Word or combination of letters to search?")
     lbl_name.grid(row=0, column=0)
 
     entry_name = tk.Entry(window, background="sky blue")
@@ -54,22 +53,6 @@ def set_main(window):
     btn_spam_website = tk.Button(window, text="Here's about me!")
     btn_spam_website.grid(row=6, column=0)
 
-
-
-    def comparing(name, document):
-        """Counts the times that the word is in the document"""
-        total = 0
-
-        
-
-        for word in document:
-            if name in word:
-                total+= 1
-        text_comparison = f"Times that the word are repeated are {total}"
-        return text_comparison
-
-
-
     def message_btn():
         """Shows different messages at the end of the button"""
         global word
@@ -87,25 +70,33 @@ def set_main(window):
         try:
             doc = body_document
         except NameError:
-            output_message.set("Please Enter a word")    
+            output_message.set("Please Enter a word or a Letter")    
         try:
             make_lower_case(doc)
             lbl_comparison_final = comparing(word, doc)
             output_message.set(lbl_comparison_final)
         except UnboundLocalError:
             output_message.set("Please Enter a file")    
-        
-
-   
+    
     btn_start.config(command=message_btn)
-
     btn_spam_website.config(command=open_url)
+
+
+def comparing(name, document):
+    """Counts the times that the input is in the document"""
+    total = 0
+
+    for word in document:
+        if name in word:
+            total+= 1
+    text_comparison = f"It is repeated is {total} times"
+    return text_comparison
 
 def open_url():
     """Open my biography making Spam"""
     url = "https://moisesph.github.io/wdd130"
     webbrowser.open_new_tab(url)
-
+    return True
 
 def open_file():
     """Open the file cleaning it with any unwanted sign"""
@@ -123,8 +114,6 @@ def open_file():
 
     file_name_only = os.path.basename(filename)
 
-
-    #Heres a bug where if you don't select anything says it was opened successfully
 
     try:
         with open(filename, "r", encoding="utf-8") as f:
@@ -147,7 +136,6 @@ def open_file():
             message = "Please select a File!" 
             )
 
-
 def make_lower_case(document):
     """Makes the List lower"""
 
@@ -155,13 +143,13 @@ def make_lower_case(document):
         document[i] = words.lower()
 
 
-    return words
+    return document
 
 
 #Requirements
 #1. The report be nice                          Yes
-#2. Report with total of 12 hours               NO
-#3. Runs ok and with no incorrect results       NO
+#2. Report with total of 12 hours               Yes
+#3. Runs ok and with no incorrect results       Almost, if you enter err, and is in the system, it counts it
 #4. 4 functions (I have 3)                      YES
 #5. Program use 1 module                       YES
 #6. Two Test Functions                          NO
@@ -172,5 +160,5 @@ def make_lower_case(document):
 
 #Look how to attach the key enter to the button action
 
-if __name__ in "__main__":
+if __name__ == "__main__":
     main()
