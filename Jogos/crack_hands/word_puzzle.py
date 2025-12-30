@@ -1,15 +1,30 @@
 """A word Puzzle"""
 
 import random
+import tkinter as tk
+from tkinter import Frame, Label, Button, filedialog as fd, ttk
+from tkinter.messagebox import showinfo
 
 words = ["destructor","mundo","alma","monos", "reir"] # 
 secret_word = random.choice(words)
 
 
 def main():
+    root = tk.Tk()
+    root.resizable(False, False)
+
+    frm_window = tk.Frame(root)
+    frm_window.master.title("Break Hands")
+    frm_window.pack(padx=3, pady=3, fill=tk.BOTH, expand=True)
+    set_main(frm_window)
+    frm_window.mainloop()
+
+def set_main(window): #I am here!
     right_position = ""
     tries = 0
     guess = ""
+
+
 
     hint = make_underscore(secret_word)
     print("Bienvenidos al Quiebra Manos\n")
