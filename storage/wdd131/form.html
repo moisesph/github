@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="description" content="This is a web to get feedback from the user and learn how to do it!">
+    <meta name="author" content="Moises Pleytez">
+
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-small.css">
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+
+        <form action="review.html" method="get">
+            <div class="content">
+                <label for="product">Product Name</label>
+                <select name="product" id="product" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+
+                </select>
+            </div>
+
+
+            <div class="content">
+                <label class="spaced">Overall Rating</label>
+                <div class="many-rating">
+                    <div><label for="1">⭐</label><input type="radio" id="1" name="rating" value="1" required></div>
+                    <div><label for="2">⭐⭐</label><input type="radio" id="2" name="rating" value="2" required></div>
+                    <div><label for="3">⭐⭐⭐</label><input type="radio" id="3" name="rating" value="3" required></div>
+                    <div><label for="4">⭐⭐⭐⭐</label><input type="radio" id="4" name="rating" value="4" required></div>
+                    <div><label for="5">⭐⭐⭐⭐⭐</label><input type="radio" id="5" name="rating" value="5" required></div>
+                </div>
+            </div>
+
+
+
+            <div>
+                <label class="adjust" for="installation">Date of Installation <input type="date" name="installation"
+                        id="installation"></label>
+            </div>
+
+
+
+            <div class="content mobil-content">
+                <label class="spaced">Which features did you find useful in the product?<br><i>(Check all that
+                        apply)</i></label>
+                <label for="abox1"><input type="checkbox" id="abox1" value="durability"><span>Durability</span></label>
+                <label for="abox2"><input type="checkbox" id="abox2" value="easy"><span>Easy of Use</span></label>
+                <label for="abox3"><input type="checkbox" id="abox3"
+                        value="performance"><span>Performance</span></label>
+                <label for="abox4"><input type="checkbox" id="abox4" value="design"><span>Design</span></label>
+            </div>
+
+
+            <div class="content">
+                <label for="review">Written Review <span class="optional">(Optional)</span>
+                </label>
+                <textarea id="review" name="review" rows="5" cols="55"></textarea>
+            </div>
+
+            <div class="content">
+                <label for="fname">Your Name <span class="optional">(Optional)</span>
+                </label>
+                <input type="text" id="fname" name="fname">
+            </div>
+
+            <div>
+                <input type="submit" value="Post Review">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> 🏆 Moises Pleytez 🏆 Honduras</p>
+        <p class="highlight">Last Modification: <span id="lastModified"></span></p>
+
+    </footer>
+
+</body>
+
+</html>

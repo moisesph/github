@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: hsl(28, 85%, 62%);
+    --pop-color: hsl(35, 87%, 61%);
+    --background: hsl(215, 62%, 31%);
+    --typeface: hsl(70, 100%, 67%);
+}
+
+
+
+body {
+    font-family: "Open Sans", ;
+    max-width: 75rem;
+    width: 95%;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+header,
+footer {
+    background-color: var(--primary);
+    padding: 1rem;
+
+    align-items: center;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 1rem 0 1.3rem 1rem;
+
+}
+
+header img {
+    width: 2rem;
+}
+
+main {
+    max-width: 75rem;
+    text-align: center;
+
+}
+
+footer {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+nav {
+    max-width: 700px;
+    margin: 1rem auto;
+    display: flex;
+
+
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+
+
+}
+
+ul a {
+
+    text-align: center;
+    color: #fff;
+
+}
+
+li {
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+
+a:hover {
+    color: black;
+    border-radius: 0.25rem;
+}
+
+
+#low-case {
+    font-size: 0.8rem;
+}
+
+
+
+h2 {
+    margin: 2rem 0;
+}
+
+div {
+    margin: 3rem 0;
+}
+
+
+
+
+input,
+#btn {
+    padding: .3rem;
+    margin: 0 0 .6rem 0;
+    background-color: var(--pop-color);
+    transition: background-color 0.3s ease;
+}
+
+input:hover,
+#btn:hover {
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+
+
+
+#select-region {
+    margin: 0;
+}
+
+#select-region input {
+    margin: 0 6rem;
+}
+
+img {
+    border-radius: .4rem;
+    filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0));
+    transition: filter .4s ease;
+}
+
+img:hover {
+    filter: drop-shadow(0 -2mm 4mm rgb(255, 193, 34));
+    cursor: pointer;
+}
+
+
+#regions img {
+    width: 10rem;
+    margin: 0 1.5rem;
+
+}
+
+
+
+
+
+#gamesp img {
+    width: 22rem;
+    height: 11rem;
+}
+
+
+#emu img {
+    width: 36rem;
+    height: 13rem;
+}
+
+
+
+#indipokemon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#indipokemon div {
+    margin: 0 .8rem;
+}
+
+
+#indipokemon img {
+    width: 13rem;
+
+    background-color: var(--pop-color);
+    border-radius: 1.3rem;
+    padding: 3rem;
+    margin-bottom: .6rem;
+    background-size: cover;
+    object-fit: contain;
+    max-width: 18.75rem;
+    max-height: 12.5rem;
+    min-height: 12.5rem;
+}
+
+
+#indipokemon ul {
+    padding: .5rem;
+    background-color: var(--background);
+    border: 2px solid var(--typeface);
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    color: var(--typeface);
+    border-radius: 1.3rem;
+
+}
+
+
+.infop {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.navigation a {
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    flex: 1 1 100%;
+
+}
+
+.open a {
+    display: block;
+}
+
+
+
+@media (min-width: 37.5em) {
+
+    h1 {
+        font-size: 2.5rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+    }
+
+    .navigation a {
+        display: block;
+
+    }
+
+
+}

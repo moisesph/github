@@ -1,0 +1,10 @@
+:root {
+    --primary: hsl(28, 85%, 62%);
+    --pop-color: hsl(35, 87%, 61%);
+    --background: hsl(215, 62%, 31%);
+    --typeface: hsl(70, 100%, 67%);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}

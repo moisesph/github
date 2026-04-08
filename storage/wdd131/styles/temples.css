@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --background-main-color: rgb(77, 189, 155);
+    --letter-background-color: rgb(252, 254, 253);
+    --main-letter-color: hsl(162, 46%, 35%);
+}
+
+
+body {
+    padding: 0 1.25rem;
+    max-width: 75rem;
+    margin: 0 auto;
+
+    font-family: "Open Sans", sans-serif;
+}
+
+
+
+
+header,
+footer {
+    background-color: var(--background-main-color);
+    color: var(--letter-background-color);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    padding: 1rem 0 1.3rem 1rem;
+}
+
+header p {
+    font-size: 2.3rem;
+
+}
+
+nav {
+    max-width: 700px;
+    margin: 1rem auto;
+    display: flex;
+}
+
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 1rem;
+    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--main-letter-color);
+    background-color: var(--letter-background-color);
+    padding: 0.6rem;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 0.25rem;
+}
+
+h1 {
+    text-align: left;
+    font-family: times, serif;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    text-align: center;
+    padding: 2rem 0 1rem;
+
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: navy;
+    text-align: left;
+    margin: 1rem;
+}
+
+
+
+
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.navigation a {
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    flex: 1 1 100%;
+
+}
+
+.open a {
+    display: block;
+}
+
+
+main {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+
+
+
+img {
+    width: 15rem;
+    height: auto;
+    display: block;
+}
+
+.album {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    place-items: center;
+    padding: 1rem;
+
+}
+
+figure {
+    padding-bottom: 2rem;
+}
+
+figcaption {
+    text-align: center;
+    color: var(--main-letter-color);
+    margin-top: 0.3rem;
+}
+
+
+footer {
+    padding: .4rem;
+    text-align: center;
+}
+
+.highlight {
+    font-size: 0.8rem;
+}
+
+
+
+@media (min-width: 37.5em) {
+
+    h1 {
+        font-size: 2.5rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+    }
+
+    .navigation a {
+        display: block;
+
+    }
+
+
+}

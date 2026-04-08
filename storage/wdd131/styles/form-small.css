@@ -1,0 +1,15 @@
+@media(max-width: 600px) {
+
+    label {
+        justify-self: center;
+    }
+
+    .mobil-content {
+        justify-self: center;
+    }
+
+    .mobil-content label {
+        justify-self: start;
+
+    }
+}

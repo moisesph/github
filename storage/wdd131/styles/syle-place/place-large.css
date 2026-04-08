@@ -1,0 +1,77 @@
+@media (max-width: 440px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        background-image: none;
+
+    }
+
+    header {
+        position: static;
+        font-size: .65rem;
+        padding: .9rem;
+        background-color: var(--background-main);
+        margin: 0;
+    }
+
+    section {
+        margin: 1rem auto;
+        position: static;
+    }
+
+    #image-phone img {
+        height: auto;
+        width: 100%;
+        border-bottom: .2rem solid var(--background-main);
+    }
+
+    .tag {
+        position: relative;
+        left: 77%;
+        transform: translateX(-50%);
+
+    }
+
+
+    .weather-title::after {
+
+        right: -2.8rem;
+
+    }
+
+    #box1,
+    #box2 {
+        position: static;
+        background-color: transparent;
+        width: 100%;
+
+    }
+
+    #info1,
+    #info2 {
+        padding-top: 3rem;
+    }
+
+    .fly::before {
+        text-align: center;
+        background-color: transparent;
+        color: black;
+        width: 100%;
+        margin: 0 auto;
+        width: 100%;
+
+    }
+
+    footer {
+        width: 100%;
+    }
+
+}

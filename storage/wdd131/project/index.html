@@ -1,0 +1,91 @@
+<!--The websites were you can download the games are not mine, but I put them there as an extra feature -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 Hours Initial Pokemon</title>
+    <meta name="description"
+        content="This is a page were you can see the 3 initial Pokemons of each region and download the games">
+    <meta name="author" content="Moises Pleytez">
+    <link rel="stylesheet" href="styles/pokemon.css">
+    <link rel="stylesheet" href="styles/pokemon-large.css">
+
+    <script src="scripts/mainpokemon.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/pokemons.js" defer></script>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>9 Hours Initial Pokemon</h1>
+            <button type="button" id="menu"> </button>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://www.romsgames.net/tags/pokemon-roms/">Games</a></li>
+                    <li><a href="https://www.romsgames.net/emulators/">Emulators</a>
+                        <!--These are not my websites, but they are good pages -->
+                </ul>
+            </nav>
+        </header>
+
+
+        <h2>Regions</h2>
+        <div id="regions">
+
+            <label for="kanto"><img loading="lazy" src="images/kanto.webp" alt="Kanto Map"></label>
+            <label for="johto"><img loading="lazy" src="images/johto.webp" alt="Johto Map"></label>
+            <label for="hoen"><img loading="lazy" src="images/hoen.webp" alt="Hoen Map"></label>
+
+            <div id="select-region">
+                <form action="pokemons.html" id="sub-region">
+                    <input type="radio" id="kanto" name="regionSelected" value="kanto" required>
+                    <input type="radio" id="johto" name="regionSelected" value="johto" required>
+                    <input type="radio" id="hoen" name="regionSelected" value="hoen" required>
+            </div>
+
+            <input type="submit" value="View Pokemons">
+            </form>
+
+            <p>Select Which Pokemon would be the best in which region!
+            </p>
+        </div>
+
+
+        <div id="gamesp">
+            <h2>Games</h2>
+            <a href="https://www.romsgames.net/gameboy-advance-rom-pokemon-firered-version/">
+                <img loading="lazy" src="images/red.webp" alt="Pokemon Red Logo"></a>
+            <a href="https://www.romsgames.net/gameboy-color-rom-pokemon-crystal-version/">
+                <img loading="lazy" src="images/crystal.webp" alt="Pokemon Crystal Logo"></a>
+            <a href="https://www.romsgames.net/gameboy-advance-rom-pokemon-emerald-version/">
+                <img loading="lazy" src="images/esmerald.jpg" alt="Pokemon Esmerald Logo"></a>
+        </div>
+
+        <div id="emu">
+            <a href="https://www.romsgames.net/gameboy-advance-emu-batgba-225b/">
+                <img loading="lazy" src="images/emulators.webp"></a>
+        </div>
+
+
+
+        <footer>
+            <p>©<span id="currentyear"></span> 🏆 Moises Pleytez 🏆 Honduras</p>
+            <p id="low-case">Last Modification: <span id="lastModified"></span></p>
+        </footer>
+    </main>
+</body>
+
+</html>

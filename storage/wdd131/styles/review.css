@@ -1,0 +1,13 @@
+main {
+    min-height: 46.5vh;
+    text-align: center;
+    margin-block-start: 41vh;
+}
+
+@media(max-width: 600px) {
+
+    main {
+        min-height: 40.9vh;
+
+    }
+}

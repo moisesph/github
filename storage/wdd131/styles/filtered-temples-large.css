@@ -1,0 +1,73 @@
+@media screen and (max-width: 30rem) {
+
+
+    body {
+        max-width: 100vw;
+        padding: 0;
+        max-width: 100vw;
+    }
+
+    header {
+        padding: 0rem 1rem;
+        position: relative;
+        min-height: auto;
+        grid-template-columns: 57% 43%;
+    }
+
+
+
+    header p {
+        font-size: 1.5rem;
+
+    }
+
+
+    nav a {
+        display: block;
+        text-decoration: none;
+        color: var(--letter-background-color);
+        border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
+
+    }
+
+    nav a:hover {
+        color: var(--main-letter-color);
+        background-color: var(--letter-background-color);
+        border-radius: 0.25rem;
+    }
+
+
+    .navigation a {
+        flex: 1 1 100%;
+    }
+
+    #menu {
+        position: absolute;
+        right: 1rem;
+        top: 1.6rem;
+        font-size: 2rem;
+        padding: 0;
+
+    }
+
+
+    nav ul li {
+        margin: 0;
+
+        font-size: .9rem;
+    }
+
+    header nav {
+        margin-left: 10px;
+    }
+
+
+
+
+    .album {
+        display: grid;
+        grid-template: 1fr / 1fr;
+        place-items: center;
+        padding: 1rem;
+    }
+}
