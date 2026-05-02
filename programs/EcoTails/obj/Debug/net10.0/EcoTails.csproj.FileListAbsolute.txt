@@ -1,0 +1,15 @@
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\bin\Debug\net10.0\EcoTails.exe
+C:\Users\Moises\Documents\Programming\github\programs\EcoTails\bin\Debug\net10.0\EcoTails.deps.json
+C:\Users\Moises\Documents\Programming\github\programs\EcoTails\bin\Debug\net10.0\EcoTails.runtimeconfig.json
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\bin\Debug\net10.0\EcoTails.dll
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\bin\Debug\net10.0\EcoTails.pdb
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.AssemblyInfoInputs.cache
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.AssemblyInfo.cs
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.csproj.CoreCompileInputs.cache
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.sourcelink.json
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.dll
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\refint\EcoTails.dll
+c:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.pdb
+C:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\EcoTails.genruntimeconfig.cache
+C:\Users\Moises\Documents\Programming\github\programs\EcoTails\obj\Debug\net10.0\ref\EcoTails.dll

@@ -1,0 +1,38 @@
+EcoTails
+
+
+FinanceManager
+
+_total double
+_categories List<Category>
+
+LoadDocument()
+SaveDocument()
+SaveBackup()
+DisplayCategories()
+DeleteCategorie()
+RecoverDeletedCategorie()
+
+///////////////////////
+Category
+
+_name string
+_CurrentValue double
+_ValueRequired double
+_history List<string>
+
+
+DisplayValue
+DisplayName
+WriteHistory
+SaveHistory
+
+
+////////////////////////
+
+
+Person
+
+_name string
+_Income double
+
