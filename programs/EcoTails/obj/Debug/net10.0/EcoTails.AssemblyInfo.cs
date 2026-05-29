@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EcoTails")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d6c16b9960ae2a3173794edc7fa9841e3b584a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc1ed49dcac073f517efb644e82a73091e3a7f24")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcoTails")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EcoTails")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
